@@ -1,0 +1,62 @@
+<app-default-login-layout
+    title="Cadastre-se agora!"
+    primaryBtnText="Cadastre-se agora"
+    secondaryBtnText="Entre agora"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!signupForm.valid"
+>
+    <form [formGroup]="signupForm">
+        <app-primary-input
+            formControlName="codigoIdentificador"
+            inputName="codigoIdentificador"
+            type="text"
+            label="Código identificador"
+            placeholder="23"
+        >
+        <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="nome"
+            inputName="nome"
+            type="text"
+            label="Seu nome"
+            placeholder="John Doe"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <app-primary-input
+            formControlName="email"
+            inputName="email"
+            type="email"
+            label="Email"
+            placeholder="johndoe@gmail.com"
+        >
+            <img src="/assets/svg/email-icon.svg"/>
+        </app-primary-input>
+        <div class="form-group">
+            <label for="cargo">Cargo</label>
+            <select formControlName="cargo" id="cargo" class="form-control">
+                <option value="PROPRIETARIO">Proprietário</option>
+                <option value="GERENTE">Gerente</option>
+                <option value="ASSISTENTE">Assistente</option>
+            </select>
+        </div>
+        <app-primary-input
+            formControlName="senha"
+            inputName="password"
+            type="password"
+            label="Senha"
+        >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    <app-primary-input
+        formControlName="confirmarSenha"
+        inputName="password"
+        type="password"
+        label="Confirme sua senha"
+    >
+        <img src="/assets/svg/password-icon.svg"/>
+    </app-primary-input>
+    </form>
+</app-default-login-layout>
